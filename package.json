@@ -1,5 +1,5 @@
 {
-  "name": "@mmoment/firestarter-sdk",
+  "name": "firestarter-sdk",
   "version": "1.0.0",
   "description": "Client SDK for developers to integrate Pipe Network decentralized storage - inspired by Firestarter GUI",
   "main": "dist/index.js",
@@ -29,7 +29,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mmoment/firestarter-sdk"
+    "url": "https://github.com/0xmigi/firestarter-sdk"
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",

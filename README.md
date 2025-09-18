@@ -1,23 +1,23 @@
-# @mmoment/pipe-sdk
+# Firestarter SDK
 
-TypeScript SDK for Pipe Network with upload tracking and session management.
+TypeScript SDK for Pipe Network's Firestarter API with upload tracking and session management.
 
 ## Features
 
-- 🚀 **Simple API** - Easy to use client for Pipe Network
+- 🚀 **Simple API** - Easy to use client for Pipe Network's Firestarter service
 - 📝 **Upload Tracking** - Automatically track uploaded files for gallery functionality
-- 👥 **Session Management** - Multi-user session handling for camera networks
+- 👥 **Session Management** - Multi-user session handling for decentralized applications
 - 📊 **File Management** - List, search, and manage uploaded files
-- 💰 **Token Operations** - SOL/PIPE balance checking and swapping
+- 💰 **Token Operations** - SOL/PIPE balance checking and token swapping
 - 🔗 **Public Links** - Create shareable links for files
 - ⚡ **TypeScript** - Full type safety and autocomplete
 
 ## Installation
 
 ```bash
-npm install @mmoment/pipe-sdk
+npm install firestarter-sdk
 # or
-yarn add @mmoment/pipe-sdk
+yarn add firestarter-sdk
 ```
 
 ## Quick Start
@@ -25,7 +25,7 @@ yarn add @mmoment/pipe-sdk
 ### Basic Usage
 
 ```typescript
-import { createSessionManager } from '@mmoment/pipe-sdk';
+import { createSessionManager } from 'firestarter-sdk';
 
 const sessionManager = createSessionManager();
 
@@ -42,16 +42,16 @@ const files = await sessionManager.listUserFiles('user123');
 console.log('User has', files.length, 'files');
 ```
 
-### Camera Network Usage
+### DApp Integration
 
 ```typescript
-import { SessionManager } from '@mmoment/pipe-sdk';
+import { SessionManager } from 'firestarter-sdk';
 
 const manager = new SessionManager({
   baseUrl: 'https://us-west-00-firestarter.pipenetwork.com'
 });
 
-// Upload camera capture
+// Upload user content
 const result = await manager.uploadCameraCapture(
   walletAddress,
   imageBuffer,
@@ -65,7 +65,7 @@ const recentFiles = await manager.getRecentUserFiles(walletAddress, 20);
 ### Direct Client Usage
 
 ```typescript
-import { PipeClient } from '@mmoment/pipe-sdk';
+import { PipeClient } from 'firestarter-sdk';
 
 const client = new PipeClient();
 
@@ -172,7 +172,7 @@ const sessionManager = new SessionManager(config, './uploads.json');
 ## Error Handling
 
 ```typescript
-import { PipeApiError, PipeValidationError } from '@mmoment/pipe-sdk';
+import { PipeApiError, PipeValidationError } from 'firestarter-sdk';
 
 try {
   await sessionManager.uploadForUser(userId, data, fileName);
@@ -187,7 +187,7 @@ try {
 
 ## Local Storage
 
-Upload history is stored locally in JSON format (like the Pipe CLI). Default location: `~/.mmoment/pipe-uploads.json`
+Upload history is stored locally in JSON format (like the Pipe CLI). Default location: `~/.firestarter/uploads.json`
 
 You can specify a custom path:
 
@@ -215,5 +215,5 @@ MIT
 
 ## Support
 
-- GitHub Issues: [Report bugs](https://github.com/mmoment/pipe-sdk/issues)
-- Documentation: [Full API docs](https://docs.mmoment.com/pipe-sdk)
+- GitHub Issues: [Report bugs](https://github.com/0xmigi/firestarter-sdk/issues)
+- Documentation: [Full API docs](https://github.com/0xmigi/firestarter-sdk)
