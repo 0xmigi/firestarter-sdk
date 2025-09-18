@@ -1,6 +1,6 @@
 {
   "name": "firestarter-sdk",
-  "version": "1.0.0",
+  "version": "0.1.0-alpha.1",
   "description": "Client SDK for developers to integrate Pipe Network decentralized storage - inspired by Firestarter GUI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

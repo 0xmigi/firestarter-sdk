@@ -1,5 +1,7 @@
 # Firestarter SDK
 
+⚠️ **Work in Progress** - This SDK is currently under development and not yet published to npm.
+
 TypeScript SDK for Pipe Network's Firestarter API with upload tracking and session management.
 
 ## Features
@@ -14,10 +16,20 @@ TypeScript SDK for Pipe Network's Firestarter API with upload tracking and sessi
 
 ## Installation
 
+⚠️ **Not yet available on npm** - This package is still in development.
+
+For now, you can install directly from the GitHub repository:
+
 ```bash
-npm install firestarter-sdk
+# Install from GitHub (development version)
+npm install git+https://github.com/0xmigi/firestarter-sdk.git
 # or
-yarn add firestarter-sdk
+yarn add git+https://github.com/0xmigi/firestarter-sdk.git
+```
+
+Once published to npm, it will be available as:
+```bash
+npm install firestarter-sdk  # Coming soon
 ```
 
 ## Quick Start
@@ -205,7 +217,21 @@ npm test
 
 MIT
 
+## Development Status
+
+🚧 **Alpha Version** - This SDK is in active development. APIs may change without notice.
+
+### Current Status:
+- ✅ Core client functionality
+- ✅ Session management
+- ✅ Upload tracking
+- 🚧 Testing coverage (in progress)
+- 🚧 Documentation (in progress)
+- ❌ Published to npm (coming soon)
+
 ## Contributing
+
+This project is currently in early development. Contributions are welcome!
 
 1. Fork the repository
 2. Create your feature branch
