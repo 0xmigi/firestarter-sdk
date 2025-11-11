@@ -1,0 +1,69 @@
+{
+  "name": "firestarter-sdk",
+  "version": "2.1.3",
+  "description": "TypeScript SDK for Pipe Network decentralized storage - Clean, explicit, and framework-agnostic",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "API_REFERENCE.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "pipe-network",
+    "firestarter",
+    "decentralized-storage",
+    "web3-storage",
+    "solana",
+    "blockchain-storage",
+    "typescript-sdk",
+    "client-library",
+    "storage-sdk",
+    "ipfs-alternative"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xmigi/firestarter-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0xmigi/firestarter-sdk/issues"
+  },
+  "homepage": "https://github.com/0xmigi/firestarter-sdk#readme",
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "@noble/hashes": "^1.3.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
