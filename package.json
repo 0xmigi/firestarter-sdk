@@ -1,6 +1,6 @@
 {
   "name": "firestarter-sdk",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "TypeScript SDK for Pipe Network decentralized storage - Clean, explicit, and framework-agnostic",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

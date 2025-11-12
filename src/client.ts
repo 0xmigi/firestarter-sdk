@@ -48,6 +48,28 @@ export class PipeClient {
   }
 
   /**
+   * Build URL with query params, handling both absolute and relative base URLs
+   */
+  private buildUrlWithParams(path: string, params: Record<string, string>): string {
+    const fullPath = `${this.baseUrl}${path}`;
+
+    // Check if baseUrl is absolute or relative
+    if (this.baseUrl.startsWith('http://') || this.baseUrl.startsWith('https://')) {
+      const url = new URL(fullPath);
+      Object.entries(params).forEach(([key, value]) => {
+        url.searchParams.append(key, value);
+      });
+      return url.toString();
+    } else {
+      // Relative URL - build query string manually
+      const queryString = Object.entries(params)
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+        .join('&');
+      return queryString ? `${fullPath}?${queryString}` : fullPath;
+    }
+  }
+
+  /**
    * Create a new Pipe Network account
    *
    * @param username - Username (must be 8+ characters)
@@ -255,11 +277,10 @@ export class PipeClient {
       }
 
       // Build upload URL with filename
-      const url = new URL(`${this.baseUrl}/upload`);
-      url.searchParams.append('file_name', fileName);
+      const url = this.buildUrlWithParams('/upload', { file_name: fileName });
 
       // Upload as binary stream
-      const response = await axios.post(url.toString(), data, {
+      const response = await axios.post(url, data, {
         headers: {
           ...authHeaders,
           'Content-Type': 'application/octet-stream',
@@ -340,10 +361,9 @@ export class PipeClient {
     const authHeaders = await this.getAuthHeaders(account);
 
     try {
-      const downloadUrl = new URL(`${this.baseUrl}/download-stream`);
-      downloadUrl.searchParams.append('file_name', fileName);
+      const downloadUrl = this.buildUrlWithParams('/download-stream', { file_name: fileName });
 
-      const response = await axios.get(downloadUrl.toString(), {
+      const response = await axios.get(downloadUrl, {
         headers: authHeaders,
         responseType: 'arraybuffer',
         timeout: 60000,
